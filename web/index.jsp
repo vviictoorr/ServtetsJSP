@@ -237,19 +237,6 @@
     <a href="servlet1DisplayImage">click for photo</a>
 </div>
 
-<div class="three">
-    <p>Struts 2</p>
-    <ol>
-        <li></li>
-        <hr>
-        <li></li>
-        <hr>
-        <li></li>
-        <hr>
-    </ol>
-
-</div>
-
 <div class="right">
     <p>JSP</p>
     <ol>

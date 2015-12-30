@@ -7,31 +7,21 @@
 }
 
 .container {
-    width: 100%
+    width: 100%;
 }
 
 .left {
-    width: 15%;
     float: left;
     padding: 5px;
 }
 
 .body {
-    width: 35%;
     float: left;
     background-color: pink;
     padding: 5px;
 }
 
-.three {
-    width: 30%;
-    float: left;
-    background-color: #ba78ff;
-    padding: 5px;
-}
-
 .right {
-    width: 15%;
     float: left;
     padding: 5px;
 }
