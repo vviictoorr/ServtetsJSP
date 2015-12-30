@@ -1,0 +1,19 @@
+#line {
+    color: #7F9DB9;
+    max-width: 800px;
+}
+
+#line .line_hr {
+    color: #45b991;
+    align-self: center;
+    width: 800px;
+}
+
+#result .table_wish {
+    display: block;
+    float: left;
+    border: 2px solid red;
+    width: 410px;
+    height: 200px;
+    margin: 10px 15px 10px 20px;
+}

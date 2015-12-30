@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <welcome-file-list>
+        <!--<welcome-file>indexLogin.html</welcome-file>-->
+        <!--<welcome-file>indexhttpsessionlogin.html</welcome-file>-->
+
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>redirect.jsp</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>Redirects</servlet-name>
+        <servlet-class>demo.CountRedirect</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Redirects</servlet-name>
+        <url-pattern>/redirect</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Hello</servlet-name>
+        <servlet-class>demo.Hello</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Hello</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FormInput</servlet-name>
+        <servlet-class>demo.WriteName</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FormInput</servlet-name>
+        <url-pattern>/welcome</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Click</servlet-name>
+        <servlet-class>demo.ShowHeaders</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Click</servlet-name>
+        <url-pattern>/run</url-pattern>
+    </servlet-mapping>
+
+    <!--RequestDispatcher-->
+    <servlet>
+        <description>This is the description of my J2EE component</description>
+        <display-name>This is the display name of my J2EE component</display-name>
+        <servlet-name>Simple</servlet-name>
+        <servlet-class>demo.RequestDispatcher.Simple</servlet-class>
+    </servlet>
+    <servlet>
+        <description>This is the description of my J2EE component</description>
+        <display-name>This is the display name of my J2EE component</display-name>
+        <servlet-name>WelcomeServlet</servlet-name>
+        <servlet-class>demo.RequestDispatcher.WelcomeServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Simple</servlet-name>
+        <url-pattern>/go</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>WelcomeServlet</servlet-name>
+        <url-pattern>/welcomeS</url-pattern>
+    </servlet-mapping>
+
+    <!--HttpServletResponse-->
+    <servlet>
+        <description></description>
+        <display-name>MySearcher</display-name>
+        <servlet-name>MySearcher</servlet-name>
+        <servlet-class>demo.HttpServletResponse.MySearcherSendRedirect</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MySearcher</servlet-name>
+        <url-pattern>/MySearcher</url-pattern>
+    </servlet-mapping>
+
+    <!--ServletConfig-->
+    <servlet>
+        <servlet-name>DemoServlet</servlet-name>
+        <servlet-class>demo.ServletConfig.GetInitializationParameter</servlet-class>
+        <init-param>
+            <param-name>driver</param-name>
+            <param-value>oracle.jdbc.driver.OracleDriver</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DemoServlet</servlet-name>
+        <url-pattern>/servlet1</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DemoServlet2</servlet-name>
+        <servlet-class>demo.ServletConfig.GetAllInitializationParameters</servlet-class>
+        <init-param>
+            <param-name>username</param-name>
+            <param-value>system</param-value>
+        </init-param>
+        <init-param>
+            <param-name>password</param-name>
+            <param-value>oracle</param-value>
+        </init-param>
+
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DemoServlet2</servlet-name>
+        <url-pattern>/servlet2</url-pattern>
+    </servlet-mapping>
+
+    <!--ServletContext-->
+    <context-param>
+        <param-name>dname</param-name>
+        <param-value>sun.jdbc.odbc.JdbcOdbcDriver</param-value>
+    </context-param>
+    <servlet>
+        <servlet-name>DemoServlet3</servlet-name>
+        <servlet-class>demo.ServletContext.GetInitializationParameter</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DemoServlet3</servlet-name>
+        <url-pattern>/servlet3</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DemoServlet4</servlet-name>
+        <servlet-class>demo.ServletContext.GetInitializationParameterAll</servlet-class>
+    </servlet>
+
+    <context-param>
+        <param-name>dname2</param-name>
+        <param-value>sun.jdbc.odbc.JdbcOdbcDriver</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>username</param-name>
+        <param-value>system</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>password</param-name>
+        <param-value>oracle</param-value>
+    </context-param>
+
+    <servlet-mapping>
+        <servlet-name>DemoServlet4</servlet-name>
+        <url-pattern>/servlet4</url-pattern>
+    </servlet-mapping>
+
+    <!--Attribute in Servlet-->
+    <servlet>
+        <servlet-name>s11</servlet-name>
+        <servlet-class>demo.ServletContext.Attribute.DemoServlet1</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>s11</servlet-name>
+        <url-pattern>/servlet11</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>s12</servlet-name>
+        <servlet-class>demo.ServletContext.Attribute.DemoServlet2</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>s12</servlet-name>
+        <url-pattern>/servlet12</url-pattern>
+    </servlet-mapping>
+
+    <!--Cookies-->
+    <servlet>
+        <description>This is the description of my J2EE component</description>
+        <display-name>This is the display name of my J2EE component</display-name>
+        <servlet-name>Servlet113</servlet-name>
+        <servlet-class>demo.Session.Cookies.FirstServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <description>This is the description of my J2EE component</description>
+        <display-name>This is the display name of my J2EE component</display-name>
+        <servlet-name>SecondServlet</servlet-name>
+        <servlet-class>demo.Session.Cookies.SecondServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Servlet113</servlet-name>
+        <url-pattern>/servlet13</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SecondServlet</servlet-name>
+        <url-pattern>/servlet213</url-pattern>
+    </servlet-mapping>
+
+    <!--LOGIN-->
+    <servlet>
+        <description></description>
+        <display-name>LoginServlet</display-name>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>demo.Session.Cookies.loginappcookie.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <description></description>
+        <display-name>ProfileServlet</display-name>
+        <servlet-name>ProfileServlet</servlet-name>
+        <servlet-class>demo.Session.Cookies.loginappcookie.ProfileServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProfileServlet</servlet-name>
+        <url-pattern>/ProfileServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <description></description>
+        <display-name>LogoutServlet</display-name>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>demo.Session.Cookies.loginappcookie.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--HiddenFormField-->
+    <servlet>
+        <description>This is the description of my J2EE component</description>
+        <display-name>This is the display name of my J2EE component</display-name>
+        <servlet-name>Servlet1</servlet-name>
+        <servlet-class>demo.Session.HiddenFormField.FirstServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <description>This is the description of my J2EE component</description>
+        <display-name>This is the display name of my J2EE component</display-name>
+        <servlet-name>SecondServletH</servlet-name>
+        <servlet-class>demo.Session.HiddenFormField.SecondServlet</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>Servlet1</servlet-name>
+        <url-pattern>/goH</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SecondServletH</servlet-name>
+        <url-pattern>/welcomeH</url-pattern>
+    </servlet-mapping>
+
+    <!--URLRewriting-->
+
+    <servlet>
+        <servlet-name>s1</servlet-name>
+        <servlet-class>demo.Session.URLRewriting.FirstServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>s1</servlet-name>
+        <url-pattern>/servlet1U</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>s2</servlet-name>
+        <servlet-class>demo.Session.URLRewriting.SecondServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>s2</servlet-name>
+        <url-pattern>/servlet2U</url-pattern>
+    </servlet-mapping>
+
+    <!--4__HttpSession interface-->
+
+    <servlet>
+        <servlet-name>s1H</servlet-name>
+        <servlet-class>demo.Session.HttpSession.FirstServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>s1H</servlet-name>
+        <url-pattern>/servlet1H</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>s2H</servlet-name>
+        <servlet-class>demo.Session.HttpSession.SecondServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>s2H</servlet-name>
+        <url-pattern>/servlet2H</url-pattern>
+    </servlet-mapping>
+
+    <!--4__HttpSession interface____login-->
+
+    <servlet>
+        <description></description>
+        <display-name>FirstServletH</display-name>
+        <servlet-name>FirstServletH</servlet-name>
+        <servlet-class>demo.Session.HttpSession.httpsessionlogin.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FirstServletH</servlet-name>
+        <url-pattern>/LoginServletH</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <description></description>
+        <display-name>SecondServletHH</display-name>
+        <servlet-name>SecondServletHH</servlet-name>
+        <servlet-class>demo.Session.HttpSession.httpsessionlogin.ProfileServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SecondServletHH</servlet-name>
+        <url-pattern>/ProfileServletHH</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <description></description>
+        <display-name>LogoutServletH</display-name>
+        <servlet-name>LogoutServletH</servlet-name>
+        <servlet-class>demo.Session.HttpSession.httpsessionlogin.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServletH</servlet-name>
+        <url-pattern>/LogoutServletH</url-pattern>
+    </servlet-mapping>
+
+    <!--Event-->
+    <listener>
+        <listener-class>demo.EventListener.MyListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>demo.EventListener.MyListenerCreateTable</listener-class>
+    </listener>
+    <servlet>
+        <description></description>
+        <display-name>servlet1E</display-name>
+        <servlet-name>servlet1E</servlet-name>
+        <servlet-class>demo.EventListener.FetchData</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servlet1E</servlet-name>
+        <url-pattern>/servlet1EE</url-pattern>
+    </servlet-mapping>
+
+    <!--Improving Servlet performance to fetch records from database-->
+    <listener>
+        <listener-class>demo.EventListener.ImprovingServletperformance.MyListener</listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>MyServlet1</servlet-name>
+        <servlet-class>demo.EventListener.ImprovingServletperformance.MyServlet1</servlet-class>
+
+    </servlet>
+    <servlet>
+        <servlet-name>MyServlet2</servlet-name>
+        <servlet-class>demo.EventListener.ImprovingServletperformance.MyServlet2</servlet-class>
+
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>MyServlet1</servlet-name>
+        <url-pattern>/servlet1ISP</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MyServlet2</servlet-name>
+        <url-pattern>/servlet2ISP</url-pattern>
+    </servlet-mapping>
+
+    <!-- HttpSessionEvent and HttpSessionListener to count total and current logged-in users-->
+    <listener>
+        <listener-class>demo.EventListener.CountLoggedUsers.CountUserListener</listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>First</servlet-name>
+        <servlet-class>demo.EventListener.CountLoggedUsers.First</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutServletCount</servlet-name>
+        <servlet-class>demo.EventListener.CountLoggedUsers.LogoutServlet</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>First</servlet-name>
+        <url-pattern>/servlet1Count</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutServletCount</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <!--Filter___ filter is invoked automatically after the post processing of the request.-->
+    <servlet>
+        <servlet-name>HelloServlet</servlet-name>
+        <servlet-class>demo.Filter.invokedAutomatically.HelloServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>HelloServlet</servlet-name>
+        <url-pattern>/servlet1F</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>f1</filter-name>
+        <filter-class>demo.Filter.invokedAutomatically.MyFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>f1</filter-name>
+        <url-pattern>/servlet1F</url-pattern>
+    </filter-mapping>
+
+    <!--Filter___authenticating user using filter-->
+    <servlet>
+        <servlet-name>AdminServlet</servlet-name>
+        <servlet-class>demo.Filter.filterAuthUser.AdminServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AdminServlet</servlet-name>
+        <url-pattern>/servlet1Au</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>f1Au</filter-name>
+        <filter-class>demo.Filter.filterAuthUser.MyFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>f1Au</filter-name>
+        <url-pattern>/servlet1Au</url-pattern>
+    </filter-mapping>
+
+    <!--Useful Filter Examples-->
+    <filter>
+        <filter-name>SendingResponseByFilterOnly</filter-name>
+        <filter-class>demo.Filter.SendingResponseByFilterOnly</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>SendingResponseByFilterOnly</filter-name>
+        <url-pattern>/servlet1Au</url-pattern>
+    </filter-mapping>
+
+    <!--Filter config-->
+    <servlet>
+        <servlet-name>HelloServletFilCon</servlet-name>
+        <servlet-class>demo.Filter.filterconfig.HelloServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>HelloServletFilCon</servlet-name>
+        <url-pattern>/servlet1FilCon</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>f1FilCon</filter-name>
+        <filter-class>demo.Filter.filterconfig.MyFilter</filter-class>
+        <init-param>
+            <param-name>construction</param-name>
+            <param-value>yes</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>f1FilCon</filter-name>
+        <url-pattern>/servlet1FilCon</url-pattern>
+    </filter-mapping>
+
+    <!--SingleThreadModel interface-->
+    <servlet>
+        <servlet-name>MyServlet</servlet-name>
+        <servlet-class>demo.SingleThreadModelInterface.MyServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>MyServlet</servlet-name>
+        <url-pattern>/servlet1Thread</url-pattern>
+    </servlet-mapping>
+
+    <!---->
+    <servlet>
+        <servlet-name>DisplayImage</servlet-name>
+        <servlet-class>demo.ServletOutputStreamDisplayImage.DisplayImage</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DisplayImage</servlet-name>
+        <url-pattern>/servlet1DisplayImage</url-pattern>
+    </servlet-mapping>
+
+    <!--Registration form-->
+    <servlet>
+        <servlet-name>Register</servlet-name>
+        <servlet-class>DevelepmentServlet.RegistrationForm.Register</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Register</servlet-name>
+        <url-pattern>/servletRegister</url-pattern>
+    </servlet-mapping>
+
+    <!--Fetching Result-->
+    <servlet>
+        <servlet-name>Search</servlet-name>
+        <servlet-class>DevelepmentServlet.FetchingResult.Search</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Search</servlet-name>
+        <url-pattern>/servletSearch</url-pattern>
+    </servlet-mapping>
+
+    <!--Servlet performance to fetch records-->
+    <listener>
+        <listener-class>DevelepmentServlet.FetchPerformanceContextEvent.MyListener</listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>MyServlet1PerfFetch</servlet-name>
+        <servlet-class>DevelepmentServlet.FetchPerformanceContextEvent.MyServlet1</servlet-class>
+
+    </servlet>
+    <servlet>
+        <servlet-name>MyServlet2PerfFetch</servlet-name>
+        <servlet-class>DevelepmentServlet.FetchPerformanceContextEvent.MyServlet2</servlet-class>
+
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>MyServlet1PerfFetch</servlet-name>
+        <url-pattern>/servlet1PerfFetch</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MyServlet2PerfFetch</servlet-name>
+        <url-pattern>/servlet2PerfFetch</url-pattern>
+    </servlet-mapping>
+
+    <!--Upload file to the server-->
+    <servlet>
+        <servlet-name>UploadServlet</servlet-name>
+        <servlet-class>DevelepmentServlet.UploadFile.UploadServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UploadServlet</servlet-name>
+        <url-pattern>/goUpload</url-pattern>
+    </servlet-mapping>
+
+    <!--Download file-->
+    <servlet>
+        <description>This is the description of my J2EE component</description>
+        <display-name>This is the display name of my J2EE component</display-name>
+        <servlet-name>DownloadServlet</servlet-name>
+        <servlet-class>DevelepmentServlet.DownloadFile.DownloadServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DownloadServlet</servlet-name>
+        <url-pattern>/DownloadServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--Send mail-->
+
+    <servlet>
+        <description>This is the description of my J2EE component</description>
+        <display-name>This is the display name of my J2EE component</display-name>
+        <servlet-name>SendMail</servlet-name>
+        <servlet-class>DevelepmentServlet.SendMail.SendMail</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SendMail</servlet-name>
+        <url-pattern>/servletSendMail</url-pattern>
+    </servlet-mapping>
+
+    <!--Login Form + database-->
+
+    <servlet>
+        <servlet-name>FirstServletLoginForm</servlet-name>
+        <servlet-class>DevelepmentServlet.LoginForm.FirstServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>WelcomeServletLoginForm</servlet-name>
+        <servlet-class>DevelepmentServlet.LoginForm.WelcomeServlet</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>FirstServletLoginForm</servlet-name>
+        <url-pattern>/servlet1LoginForm</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>WelcomeServletLoginForm</servlet-name>
+        <url-pattern>/servlet2LoginForm</url-pattern>
+    </servlet-mapping>
+
+    <!--DisplayImage-->
+
+    <servlet>
+        <servlet-name>DisplayImageSER</servlet-name>
+        <servlet-class>DevelepmentServlet.DisplayImage.DisplayImage</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DisplayImageSER</servlet-name>
+        <url-pattern>/servlet1DisplayImageSER</url-pattern>
+    </servlet-mapping>
+
+    <!--JSP--><!--JSP--><!--JSP--><!--JSP--><!--JSP--><!--JSP--><!--JSP--><!--JSP--><!--JSP--><!--JSP-->
+    <!--4) JSP config implicit object-->
+
+    <servlet>
+        <servlet-name>JSPconfig</servlet-name>
+        <!--<jsp-file>/JSPfiles/ScriptingElements.jsp</jsp-file>-->
+        <jsp-file>/JSPfiles/ScriptingElements.jsp</jsp-file>
+
+
+        <init-param>
+            <param-name>dname4</param-name>
+            <param-value>sun.jdbc.odbc.JdbcOdbcDriver</param-value>
+        </init-param>
+
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>JSPconfig</servlet-name>
+        <url-pattern>/JSPfiles/ScriptingElements</url-pattern>
+    </servlet-mapping>
+
+    <!--MVC-->
+    <servlet>
+        <servlet-name>s1MVC</servlet-name>
+        <servlet-class>MVC.ControllerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>s1MVC</servlet-name>
+        <url-pattern>/ControllerServlet</url-pattern>
+    </servlet-mapping>
+
+</web-app>
