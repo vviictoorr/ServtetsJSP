@@ -1,1 +1,1 @@
-# ServtetsJSP
+# Samples Servtet and JSP in action
