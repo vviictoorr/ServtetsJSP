@@ -11,17 +11,20 @@
 }
 
 .left {
+    width: 30%;
     float: left;
     padding: 5px;
 }
 
 .body {
+    width: 35%;
     float: left;
     background-color: pink;
     padding: 5px;
 }
 
 .right {
+    width: 30%;
     float: left;
     padding: 5px;
 }
